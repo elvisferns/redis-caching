@@ -9,6 +9,7 @@ import (
 )
 
 type MyError struct {
+	// testing rebase tag
 	When time.Time
 	What string
 }
