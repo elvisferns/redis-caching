@@ -9,6 +9,7 @@ import (
 )
 
 type CacheAPI interface {
+	// test
 	Get(ctx context.Context, key string, data interface{}) (result Result, err error)
 	Set(ctx context.Context, key string, value interface{}, expiration time.Duration) (result Result, err error)
 	Delete(ctx context.Context, key string) (result Result, err error)
