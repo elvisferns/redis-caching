@@ -9,6 +9,7 @@ import (
 )
 
 type MyError struct {
+	// test tag 1
 	When time.Time
 	What string
 }
