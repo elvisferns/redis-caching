@@ -41,4 +41,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          slack_web_hook: ${{ secrests.SLACK_WEB_HOOK }}
+          slack_web_hook: ${{ secrets.SLACK_WEB_HOOK }}
