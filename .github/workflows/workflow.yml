@@ -1,15 +1,9 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Stale PRs Notifications
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
   
@@ -27,7 +21,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: Close Stale Issues
+      - name: Label Stale Issues
         uses: actions/stale@v4.0.0
         with:
           stale-pr-message: ""
@@ -36,4 +30,8 @@ jobs:
           # The number of days to wait to close an issue or a pull request after it being marked stale. Set to -1 to never close stale issues or pull requests.
           days-before-close: -1
           # The number of days to wait to close an issue after it being marked stale. Set to -1 to never close stale issues. Override "days-before-close" option regarding only the issues.
-          
+      - name: Notify Stale Issues
+        uses: actions/stale-pr-slack-notify@v1-beta
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          slack_web_hook: "test"
