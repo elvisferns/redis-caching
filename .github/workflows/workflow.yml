@@ -36,7 +36,7 @@ jobs:
           days-before-close: -1
           # The number of days to wait to close an issue after it being marked stale. Set to -1 to never close stale issues. Override "days-before-close" option regarding only the issues.
       - name: Notify Stale Issues
-        uses: elvisferns/stale-pr-slack-notify@v1-beta
+        uses: elvisferns/stale-pr-slack-notify@v1.0.1
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           slack_web_hook: "test"
