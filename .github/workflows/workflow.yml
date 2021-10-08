@@ -4,9 +4,10 @@ name: Stale PRs Slack Notification
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
+  # schedules to run every 10 minutes from MON - FRI
   schedule:
      - cron: '0/10 * * * 1-5'
+  # manual trigger
   workflow_dispatch:
      
 permissions:
@@ -33,7 +34,8 @@ jobs:
           # The number of days old a pull request can be before marking it stale. Set to -1 to never mark pull requests as stale automatically. Override "days-before-stale" option regarding only the pull requests.
           days-before-pr-stale: 1
           # The number of days to wait to close an issue or a pull request after it being marked stale. Set to -1 to never close stale issues or pull requests.
-          days-before-close: -1
+          days-before-close: 60
           # The number of days to wait to close an issue after it being marked stale. Set to -1 to never close stale issues. Override "days-before-close" option regarding only the issues.
           stale-pr-label: 'stale'
           remove-stale-when-updated: true
+          remove-issue-stale-when-updated: false
