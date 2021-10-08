@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Stale PRs Notifications
+name: Stale PRs Slack Notification
 
 # Controls when the workflow will run
 on:
@@ -36,8 +36,9 @@ jobs:
           days-before-close: -1
           # The number of days to wait to close an issue after it being marked stale. Set to -1 to never close stale issues. Override "days-before-close" option regarding only the issues.
           stale-pr-label: stale
+          remove-pr-stale-when-updated: true
       - name: Notify Stale Issues
-        uses: elvisferns/stale-pr-slack-notify@v1.0.19
+        uses: elvisferns/stale-pr-slack-notify@v1.0.20
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
