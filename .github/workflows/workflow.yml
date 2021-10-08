@@ -29,14 +29,15 @@ jobs:
       - name: Label Stale Issues
         uses: actions/stale@v4.0.0
         with:
-          stale-pr-message: ""
+          stale-pr-message: No activity for last 1 day
           # The message to post on the issue when closing it. If none provided, will not comment when closing an issue"
           days-before-pr-stale: 1
           # The number of days to wait to close an issue or a pull request after it being marked stale. Set to -1 to never close stale issues or pull requests.
           days-before-close: -1
           # The number of days to wait to close an issue after it being marked stale. Set to -1 to never close stale issues. Override "days-before-close" option regarding only the issues.
+          stale-pr-label: stale
       - name: Notify Stale Issues
-        uses: elvisferns/stale-pr-slack-notify@v1.0.18
+        uses: elvisferns/stale-pr-slack-notify@v1.0.19
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
