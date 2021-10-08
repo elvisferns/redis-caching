@@ -5,8 +5,8 @@ name: Stale PRs Slack Notification
 # Controls when the workflow will run
 on:
   # schedules to run every 10 minutes from MON - FRI
-  schedule:
-     - cron: '0/10 * * * 1-5'
+#   schedule:
+#      - cron: '0/10 * * * 1-5'
   # manual trigger
   workflow_dispatch:
      
@@ -17,14 +17,14 @@ permissions:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build
-  notify_stale_pr:
+  stale_pr_slack_notification:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: Label Stale Issues
+      - name: Label Stale PR
         uses: actions/stale@v4.0.0
         with:
           only-issue-labels: 'process-imp'
@@ -40,3 +40,7 @@ jobs:
           stale-pr-label: 'stale'
           remove-stale-when-updated: true
           remove-issue-stale-when-updated: false
+      - name: Slack Notify Stale PR
+        uses: KaplanTestPrep/stale-pr-slack-notification@v1.0.0-beta
+        with:
+          slack_web_hook: ${{ secrets.SLACK_WEB_HOOK }}
