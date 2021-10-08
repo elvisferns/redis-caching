@@ -6,7 +6,8 @@ name: Stale PRs Slack Notification
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   schedule:
-     - cron: '0/5 * * * 1-5'
+     - cron: '0/10 * * * 1-5'
+  workflow_dispatch:
      
 permissions:
 #     issues: write
