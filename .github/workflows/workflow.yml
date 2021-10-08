@@ -27,6 +27,7 @@ jobs:
       - name: Label Stale Issues
         uses: actions/stale@v4.0.0
         with:
+          only-issue-labels: 'process-imp'
           # The message to post on the issue when closing it. If none provided, will not comment when closing an issue"
           stale-pr-message: 'No activity for last 1 day'
           # The number of days old an issue or a pull request can be before marking it stale. Set to -1 to never mark issues or pull requests as stale automatically.
