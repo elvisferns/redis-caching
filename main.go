@@ -16,6 +16,7 @@ func main() {
 	if len(os.Args) <= 1 {
 		fmt.Println("Insuffiecient parameeters. Provide either get, set, delete")
 		os.Exit(1)
+		// testing2
 	}
 
 	ctxRoot := context.Background()
