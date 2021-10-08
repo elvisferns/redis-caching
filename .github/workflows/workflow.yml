@@ -37,3 +37,4 @@ jobs:
           # The number of days to wait to close an issue after it being marked stale. Set to -1 to never close stale issues. Override "days-before-close" option regarding only the issues.
           stale-pr-label: 'stale'
           remove-stale-when-updated: true
+          remove-issue-stale-when-updated: false
