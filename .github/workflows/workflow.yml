@@ -5,8 +5,13 @@ name: Stale PRs Slack Notification
 # Controls when the workflow will run
 on:
   # schedules to run every 10 minutes from MON - FRI
+<<<<<<< HEAD
 #   schedule:
 #      - cron: '0/10 * * * 1-5'
+=======
+  schedule:
+     - cron: '0/10 * * * 1-5'
+>>>>>>> 21f893b (Update workflow.yml)
   # manual trigger
   workflow_dispatch:
      
